@@ -6,6 +6,10 @@
 #include <sys/stat.h>
 #include <string.h>
 
+// usa fstat al posto di inotify
+
+
+
 char * find_largest_file(char * directory_name, int explore_subdirectories_recursively, int * largest_file_size);
 char * concat(const char *s1, const char *s2);
 
@@ -83,6 +87,8 @@ char * find_largest_file(char * directory_name, int explore_subdirectories_recur
 	printf("final size: %d\n", *largest_file_size);
 	return largest_file;
 }
+
+
 
 char * concat(const char *s1, const char *s2){
     char *result = malloc(strlen(s1) + strlen(s2) + 1); // +1 for the null-terminator
