@@ -16,7 +16,7 @@ char * concat(const char *s1, const char *s2);
 
 int main(int argc, char *argv[]) {
 
-	printf("first argument of this program need to be a path ending with / (an absolute path of a directory)\n");
+	printf("give an argument for this program if you want to specify the folder from where to start searching, otherwise it will be your home\n");
 
 	long * size_file = calloc(1, sizeof(long));
     if(size_file == NULL){
@@ -43,10 +43,6 @@ int main(int argc, char *argv[]) {
 	char * largest_file = find_largest_file(path, research_depth, size_file);
 	printf("largest_file : %s\n", largest_file);
 	printf("size_file    : %ld bytes\n", *size_file);
-
-	free(path);
-	free(size_file);
-	free(largest_file);
 
 	exit(EXIT_SUCCESS);
 }
